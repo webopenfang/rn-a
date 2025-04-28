@@ -6,7 +6,7 @@ function Son() {
       console.log("useEffect: 定时器");
     }, 1000);
     return () => {
-        // 清除副作用（组件卸载时）
+      //   清除副作用（组件卸载时）
       clearInterval(timer);
     };
   }, []);
@@ -37,7 +37,7 @@ function UseEffect() {
       <h1>You clicked {count} times</h1>
       <button onClick={() => setCount(count + 1)}>Click me</button>
       {show && <Son />}
-      <button onClick={() => setShow(false)}>控制组件隐藏显示</button>
+      <button onClick={() => setShow(!show)}>控制组件隐藏显示</button>
     </div>
   );
 }

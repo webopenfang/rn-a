@@ -1,6 +1,6 @@
 import One from "./componets/One";
 import Communication from "./componets/Communication";
-import UseEffect from "./componets/UseEffect";
+// import UseEffect from "./componets/UseEffect";
 import Rudex from "./componets/Rudex";
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <div>
       <One />
       <Communication />
-      <UseEffect />
+      {/* <UseEffect /> */}
       <Rudex />
     </div>
   );
