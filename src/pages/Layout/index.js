@@ -1,7 +1,19 @@
 import { Outlet, useNavigate, Link } from "react-router-dom";
-import Rudex from "../../componets/Rudex";
+import Rudex from "@/components/Rudex";
+import { useEffect } from "react";
+import { request } from "@/utils";
 const Layout = () => {
   const navigate = useNavigate();
+
+useEffect(() => {
+    request({
+      url: "/user/profile",
+      method: "get",
+    })
+  }, []);
+
+
+
   return (
     <div>
       一级路由layout
@@ -9,7 +21,6 @@ const Layout = () => {
       <button onClick={() => navigate("/")}>面板</button>
       <Outlet />
       <Rudex />
-
     </div>
   );
 };

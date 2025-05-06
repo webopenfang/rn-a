@@ -1,5 +1,5 @@
-import One from "./componets/One";
-import Communication from "./componets/Communication";
+import One from "./components/One";
+import Communication from "./components/Communication";
 // import UseEffect from "./componets/UseEffect";
 // import Rudex from "./componets/Rudex";
 
