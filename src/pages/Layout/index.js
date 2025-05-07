@@ -1,5 +1,5 @@
 import { Outlet, useNavigate, Link } from "react-router-dom";
-import Rudex from "@/components/Rudex";
+import Rudex from "@/study/Rudex";
 import { useEffect } from "react";
 import { request } from "@/utils";
 const Layout = () => {

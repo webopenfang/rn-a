@@ -6,12 +6,13 @@ import About from "../pages/About";
 import NotFoundPage from "@/pages/NotFound";
 
 import { createBrowserRouter } from "react-router-dom";
+import { AuthRoute } from "@/components/AuthRoute";
 
 // 创建router实例对象并且配置路由对应关系
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />,
+    element: <AuthRoute><Layout /></AuthRoute>,
     children: [
       // 默认二级路由
       {
