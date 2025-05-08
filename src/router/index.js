@@ -1,8 +1,9 @@
-import Login from "../pages/Login";
-import ReList from "../pages/ReList";
-import Layout from "../pages/Layout";
-import Board from "../pages/Board";
-import About from "../pages/About";
+import Login from "@/pages/Login";
+import ReList from "@/pages/ReList";
+import Layout from "@/pages/Layout";
+import Board from "@/pages/Board";
+import About from "@/pages/About";
+import Home from "@/pages/Home";
 import NotFoundPage from "@/pages/NotFound";
 
 import { createBrowserRouter } from "react-router-dom";
@@ -12,11 +13,20 @@ import { AuthRoute } from "@/components/AuthRoute";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <AuthRoute><Layout /></AuthRoute>,
+    element: (
+      <AuthRoute>
+        <Layout />
+      </AuthRoute>
+    ),
     children: [
       // 默认二级路由
       {
         index: true,
+        // path: "home",
+        element: <Home />,
+      },
+      {
+        path: "board",
         element: <Board />,
       },
       {

@@ -1,5 +1,6 @@
 import axios from "axios";
-import { getToken } from "./token";
+import { getToken, removeToken } from "./token";
+import router from "../router";
 
 const request = axios.create({
   baseURL: "http://geek.itheima.net/v1_0",
@@ -31,10 +32,13 @@ request.interceptors.response.use(
   },
   (error) => {
     // 对响应错误做点什么
-    if (error.response && error.response.status === 401) {
-      // 处理未授权的情况
-      console.error("Unauthorized access - redirecting to login.");
-      // 可以在这里添加重定向到登录页面的逻辑
+    if (error.response.status === 401) {
+      // 做token过期的处理
+      removeToken();
+      // 重新登录
+      router.navigate("/login");
+      // 强制刷新
+      window.location.reload();
     }
     return Promise.reject(error);
   }
